@@ -1,0 +1,19 @@
+﻿@model FinalProje.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/CariLayout.cshtml";
+}
+
+<h2>H&H Kuruyemiş</h2>
+<br />
+@using (Html.BeginForm("Index", "CariPanel", FormMethod.Post))
+{
+    <table class="table table-hover">
+        <tr><td><label>Mail adresi: @HttpContext.Current.User.Identity.Name</label> </td></tr>
+        <tr><td>@Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })</td></tr>
+        <tr><td>@Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })</td></tr>
+        <tr><td>@Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })</td></tr>
+        <tr><td>@Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })</td></tr>
+    </table>
+    <button class="btn btn-warning">Bilgilerimi Güncelle</button>
+}
